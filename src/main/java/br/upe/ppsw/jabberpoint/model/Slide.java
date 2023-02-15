@@ -5,8 +5,6 @@ import java.awt.Rectangle;
 import java.awt.image.ImageObserver;
 import java.util.Vector;
 
-import br.upe.ppsw.jabberpoint.presentation.TextItem;
-import br.upe.ppsw.jabberpoint.viewer.SlideItem;
 import br.upe.ppsw.jabberpoint.viewer.Style;
 
 public class Slide {
@@ -48,7 +46,7 @@ public class Slide {
   public int getSize() {
     return items.size();
   }
-
+// refatorar 
   public void draw(Graphics g, Rectangle area, ImageObserver view) {
     float scale = getScale(area);
 
