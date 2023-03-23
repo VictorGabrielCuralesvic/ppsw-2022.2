@@ -1,7 +1,8 @@
-package br.upe.ppsw.jabberpoint.model;
+package br.upe.ppsw.jabberpoint.controller;
 
 import java.util.ArrayList;
 
+import br.upe.ppsw.jabberpoint.model.Slide;
 import br.upe.ppsw.jabberpoint.viewer.SlideViewerComponent;
 
 public class Presentation {

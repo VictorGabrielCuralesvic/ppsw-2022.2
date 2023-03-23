@@ -8,8 +8,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 
 import br.upe.ppsw.jabberpoint.controller.Accessor;
+import br.upe.ppsw.jabberpoint.controller.Presentation;
 import br.upe.ppsw.jabberpoint.controller.XMLAccessor;
-import br.upe.ppsw.jabberpoint.model.Presentation;
 import br.upe.ppsw.jabberpoint.viewer.SlideViewerFrame;
 import br.upe.ppsw.jabberpoint.viewer.Style;
 
