@@ -7,7 +7,7 @@ import javax.swing.JFrame;
 
 import br.upe.ppsw.jabberpoint.controller.KeyController;
 import br.upe.ppsw.jabberpoint.controller.MenuController;
-import br.upe.ppsw.jabberpoint.model.Presentation;
+import br.upe.ppsw.jabberpoint.controller.Presentation;
 
 public class SlideViewerFrame extends JFrame {
 
