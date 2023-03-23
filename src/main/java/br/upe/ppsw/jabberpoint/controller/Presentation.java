@@ -15,7 +15,7 @@ public class Presentation {
 
   // construtor
   public Presentation() {
-    slideViewComponent = null;
+    this.slideViewComponent = null;
     clear();
   }
 
