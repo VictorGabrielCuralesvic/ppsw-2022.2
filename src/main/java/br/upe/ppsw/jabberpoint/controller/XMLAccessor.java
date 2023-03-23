@@ -21,6 +21,7 @@ import br.upe.ppsw.jabberpoint.model.TextItem;
 
 public class XMLAccessor extends Accessor {
 
+  // atributos
   protected static final String DEFAULT_API_TO_USE = "dom";
 
   protected static final String SHOWTITLE = "showtitle";
@@ -37,6 +38,7 @@ public class XMLAccessor extends Accessor {
   protected static final String NFE = "Number Format Exception";
 
 
+  // métodos
   private String getTitle(Element element, String tagName) {
     NodeList titles = element.getElementsByTagName(tagName);
     return titles.item(0).getTextContent();

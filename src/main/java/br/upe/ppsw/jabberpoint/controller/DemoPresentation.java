@@ -7,6 +7,8 @@ import br.upe.ppsw.jabberpoint.model.BitmapItem;
 import br.upe.ppsw.jabberpoint.model.Slide;
 
 public class DemoPresentation extends Accessor {
+  
+  // métodos
 
   public void loadFile(Presentation presentation, String unusedFilename)
       throws FileNotFoundException {
@@ -51,6 +53,7 @@ public class DemoPresentation extends Accessor {
     presentation.append(slide);
   }
 
+  // métodos 
   public void saveFile(Presentation presentation, String unusedFilename) {
     throw new IllegalStateException("Não é possível salvar arquivo na versão demo!");
   }

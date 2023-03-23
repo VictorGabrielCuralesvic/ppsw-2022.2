@@ -5,12 +5,15 @@ import java.awt.event.KeyEvent;
 
 public class KeyController extends KeyAdapter {
 
+  // atributos
   private Presentation presentation;
 
+  // construtor
   public KeyController(Presentation p) {
     presentation = p;
   }
 
+  // métodos
   public void keyPressed(KeyEvent keyEvent) {
     switch (keyEvent.getKeyCode()) {
       case KeyEvent.VK_PAGE_DOWN:

@@ -7,21 +7,25 @@ import br.upe.ppsw.jabberpoint.viewer.SlideViewerComponent;
 
 public class Presentation {
 
+  // atributos
   private String title;
   private ArrayList<Slide> showList = null;
   private SlideViewerComponent slideViewComponent = null;
   private int currentSlideNumber = 0;
 
+  // construtor
   public Presentation() {
     slideViewComponent = null;
     clear();
   }
 
+  //construtor
   public Presentation(SlideViewerComponent slideViewerComponent) {
     this.slideViewComponent = slideViewerComponent;
     clear();
   }
 
+  //métodos
   public int getSize() {
     return showList.size();
   }

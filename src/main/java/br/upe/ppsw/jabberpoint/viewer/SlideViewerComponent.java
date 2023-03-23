@@ -12,6 +12,8 @@ import br.upe.ppsw.jabberpoint.controller.Presentation;
 import br.upe.ppsw.jabberpoint.model.Slide;
 
 public class SlideViewerComponent extends JComponent {
+
+  // atributos
   private static final long serialVersionUID = 227L;
 
   private static final Color BGCOLOR = Color.white;
@@ -27,13 +29,17 @@ public class SlideViewerComponent extends JComponent {
   private Presentation presentation = null;
   private JFrame frame = null;
 
+  Drawer drawer;
+
+  // construtor
   public SlideViewerComponent(Presentation pres, JFrame frame) {
     setBackground(BGCOLOR);
-    presentation = pres;
+    this.presentation = pres;
     labelFont = new Font(FONTNAME, FONTSTYLE, FONTHEIGHT);
     this.frame = frame;
   }
 
+  // métodos
   public Dimension getPreferredSize() {
     return new Dimension(Slide.WIDTH, Slide.HEIGHT);
   }

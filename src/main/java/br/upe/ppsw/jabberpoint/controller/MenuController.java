@@ -15,6 +15,7 @@ import br.upe.ppsw.jabberpoint.viewer.AboutBox;
 
 public class MenuController extends MenuBar {
 
+  // atributos
   private static final long serialVersionUID = 227L;
 
   private Frame parent;
@@ -40,6 +41,7 @@ public class MenuController extends MenuBar {
   protected static final String LOADERR = "Erro ao carregar";
   protected static final String SAVEERR = "Erro ao salvar";
 
+  // construtor
   public MenuController(Frame frame, Presentation pres) {
     parent = frame;
     presentation = pres;
@@ -50,10 +52,12 @@ public class MenuController extends MenuBar {
     fileMenu.add(menuItem = mkMenuItem(OPEN));
 
     menuItem.addActionListener(new ActionListener() {
+      // método
       public void actionPerformed(ActionEvent actionEvent) {
         presentation.clear();
 
         Accessor xmlAccessor = new XMLAccessor();
+
         try {
           xmlAccessor.loadFile(presentation, ResourceUtils.getFile(TESTFILE).getAbsolutePath());
           presentation.setSlideNumber(0);
@@ -68,6 +72,7 @@ public class MenuController extends MenuBar {
     fileMenu.add(menuItem = mkMenuItem(NEW));
 
     menuItem.addActionListener(new ActionListener() {
+      // método
       public void actionPerformed(ActionEvent actionEvent) {
         presentation.clear();
         parent.repaint();
@@ -77,6 +82,7 @@ public class MenuController extends MenuBar {
     fileMenu.add(menuItem = mkMenuItem(SAVE));
 
     menuItem.addActionListener(new ActionListener() {
+      // método
       public void actionPerformed(ActionEvent e) {
         Accessor xmlAccessor = new XMLAccessor();
         try {
@@ -92,6 +98,7 @@ public class MenuController extends MenuBar {
     fileMenu.add(menuItem = mkMenuItem(EXIT));
 
     menuItem.addActionListener(new ActionListener() {
+      // método
       public void actionPerformed(ActionEvent actionEvent) {
         presentation.exit(0);
       }
@@ -103,6 +110,7 @@ public class MenuController extends MenuBar {
     viewMenu.add(menuItem = mkMenuItem(NEXT));
 
     menuItem.addActionListener(new ActionListener() {
+      // método
       public void actionPerformed(ActionEvent actionEvent) {
         presentation.nextSlide();
       }
@@ -111,6 +119,7 @@ public class MenuController extends MenuBar {
     viewMenu.add(menuItem = mkMenuItem(PREV));
 
     menuItem.addActionListener(new ActionListener() {
+      // método
       public void actionPerformed(ActionEvent actionEvent) {
         presentation.prevSlide();
       }
@@ -119,6 +128,7 @@ public class MenuController extends MenuBar {
     viewMenu.add(menuItem = mkMenuItem(GOTO));
 
     menuItem.addActionListener(new ActionListener() {
+      // método
       public void actionPerformed(ActionEvent actionEvent) {
         String pageNumberStr = JOptionPane.showInputDialog((Object) PAGENR);
         int pageNumber = Integer.parseInt(pageNumberStr);
@@ -132,6 +142,7 @@ public class MenuController extends MenuBar {
     helpMenu.add(menuItem = mkMenuItem(ABOUT));
 
     menuItem.addActionListener(new ActionListener() {
+      // método
       public void actionPerformed(ActionEvent actionEvent) {
         AboutBox.show(parent);
       }
@@ -140,6 +151,7 @@ public class MenuController extends MenuBar {
     setHelpMenu(helpMenu);
   }
 
+  // método
   public MenuItem mkMenuItem(String name) {
     return new MenuItem(name, new MenuShortcut(name.charAt(0)));
   }
