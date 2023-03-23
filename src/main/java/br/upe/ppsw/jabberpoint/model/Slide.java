@@ -1,4 +1,4 @@
-package br.upe.ppsw.jabberpoint.apresentacao;
+package br.upe.ppsw.jabberpoint.model;
 
 import java.awt.Graphics;
 import java.awt.Rectangle;
@@ -7,16 +7,20 @@ import java.util.Vector;
 
 public class Slide {
 
+  //constante
   public final static int WIDTH = 1200;
   public final static int HEIGHT = 800;
 
+  //atributos
   protected TextItem title;
   protected Vector<SlideItem> items;
 
+  // construtor
   public Slide() {
     items = new Vector<SlideItem>();
   }
 
+  // métodos
   public void append(SlideItem anItem) {
     items.addElement(anItem);
   }
@@ -44,7 +48,7 @@ public class Slide {
   public int getSize() {
     return items.size();
   }
-
+// refatorar 
   public void draw(Graphics g, Rectangle area, ImageObserver view) {
     float scale = getScale(area);
 

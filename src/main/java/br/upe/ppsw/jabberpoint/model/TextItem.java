@@ -1,4 +1,4 @@
-package br.upe.ppsw.jabberpoint.apresentacao;
+package br.upe.ppsw.jabberpoint.model;
 
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -17,10 +17,12 @@ import java.util.List;
 
 public class TextItem extends SlideItem {
 
+  //atributos
   private String text;
 
   private static final String EMPTYTEXT = "No Text Given";
 
+  // construtor
   public TextItem(int level, String string) {
     super(level);
     text = string;
@@ -30,6 +32,7 @@ public class TextItem extends SlideItem {
     this(0, EMPTYTEXT);
   }
 
+  //métodos
   public String getText() {
     return text == null ? "" : text;
   }

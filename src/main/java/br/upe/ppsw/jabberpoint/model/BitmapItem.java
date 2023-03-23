@@ -1,4 +1,4 @@
-package br.upe.ppsw.jabberpoint.apresentacao;
+package br.upe.ppsw.jabberpoint.model;
 
 import java.awt.Graphics;
 import java.awt.Rectangle;
@@ -8,6 +8,7 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import org.springframework.util.ResourceUtils;
 
+// atributos
 public class BitmapItem extends SlideItem {
 
   private BufferedImage bufferedImage;
@@ -16,6 +17,7 @@ public class BitmapItem extends SlideItem {
   protected static final String FILE = "Arquivo ";
   protected static final String NOTFOUND = " não encontrado";
 
+  // construtor
   public BitmapItem(int level, String name) {
     super(level);
 
@@ -29,10 +31,12 @@ public class BitmapItem extends SlideItem {
 
   }
 
+  // construtor
   public BitmapItem() {
     this(0, null);
   }
 
+  // métodos
   public String getName() {
     return imageName;
   }

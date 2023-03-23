@@ -1,19 +1,21 @@
-package br.upe.ppsw.jabberpoint.apresentacao;
+package br.upe.ppsw.jabberpoint.model;
 
 import java.awt.Color;
 import java.awt.Font;
 
 public class Style {
 
+  //atributos
   private static Style[] styles;
 
   private static final String FONTNAME = "Helvetica";
-  int indent;
-  Color color;
+  public int indent;
+  public Color color;
   Font font;
   int fontSize;
-  int leading;
+  public int leading;
 
+  //métodos
   public static void createStyles() {
     styles = new Style[5];
     styles[0] = new Style(0, Color.red, 48, 20); // nível 0
@@ -25,12 +27,13 @@ public class Style {
 
   public static Style getStyle(int level) {
     if (level >= styles.length) {
-      level = styles.length - 1;
+        level = styles.length - 1;
     }
 
     return styles[level];
   }
 
+  // construtor
   public Style(int indent, Color color, int points, int leading) {
     this.indent = indent;
     this.color = color;
@@ -38,6 +41,7 @@ public class Style {
     this.leading = leading;
   }
 
+  // métodos
   public String toString() {
     return "[" + indent + "," + color + "; " + fontSize + " on " + leading + "]";
   }

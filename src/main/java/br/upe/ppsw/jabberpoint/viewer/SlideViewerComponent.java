@@ -1,4 +1,4 @@
-package br.upe.ppsw.jabberpoint.apresentacao;
+package br.upe.ppsw.jabberpoint.viewer;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -8,7 +8,12 @@ import java.awt.Rectangle;
 import javax.swing.JComponent;
 import javax.swing.JFrame;
 
+import br.upe.ppsw.jabberpoint.model.Presentation;
+import br.upe.ppsw.jabberpoint.model.Slide;
+
 public class SlideViewerComponent extends JComponent {
+
+  // atributos
   private static final long serialVersionUID = 227L;
 
   private static final Color BGCOLOR = Color.white;
@@ -24,6 +29,7 @@ public class SlideViewerComponent extends JComponent {
   private Presentation presentation = null;
   private JFrame frame = null;
 
+  // construtor
   public SlideViewerComponent(Presentation pres, JFrame frame) {
     setBackground(BGCOLOR);
     presentation = pres;
@@ -31,6 +37,7 @@ public class SlideViewerComponent extends JComponent {
     this.frame = frame;
   }
 
+  // métodos
   public Dimension getPreferredSize() {
     return new Dimension(Slide.WIDTH, Slide.HEIGHT);
   }
