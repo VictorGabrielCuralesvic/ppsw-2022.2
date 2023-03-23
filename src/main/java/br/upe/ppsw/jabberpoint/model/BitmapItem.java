@@ -4,9 +4,11 @@ import java.awt.Graphics;
 import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
 import java.awt.image.ImageObserver;
+import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
-import org.springframework.util.ResourceUtils;
+
+import br.upe.ppsw.jabberpoint.viewer.BitMapItemDrawer;
 
 // atributos
 public class BitmapItem extends SlideItem {
@@ -24,10 +26,13 @@ public class BitmapItem extends SlideItem {
     imageName = name;
 
     try {
-      bufferedImage = ImageIO.read(ResourceUtils.getFile(imageName).getAbsoluteFile());
+      bufferedImage = ImageIO.read(new File(imageName));
+      /* bufferedImage = ImageIO.read(ResourceUtils.getFile(imageName).getAbsoluteFile()); */
     } catch (IOException e) {
       System.err.println(FILE + imageName + NOTFOUND);
     }
+
+    drawer = new BitMapItemDrawer();
 
   }
 
@@ -41,18 +46,17 @@ public class BitmapItem extends SlideItem {
     return imageName;
   }
 
-  public Rectangle getBoundingBox(Graphics g, ImageObserver observer, float scale, Style myStyle) {
+  public Rectangle getBoundingBox(Graphics g, ImageObserver observer, float scale) {
+
+    Style myStyle = Style.getStyle(getLevel());
+
     return new Rectangle((int) (myStyle.indent * scale), 0,
         (int) (bufferedImage.getWidth(observer) * scale),
         ((int) (myStyle.leading * scale)) + (int) (bufferedImage.getHeight(observer) * scale));
   }
 
-  public void draw(int x, int y, float scale, Graphics g, Style myStyle, ImageObserver observer) {
-    int width = x + (int) (myStyle.indent * scale);
-    int height = y + (int) (myStyle.leading * scale);
-
-    g.drawImage(bufferedImage, width, height, (int) (bufferedImage.getWidth(observer) * scale),
-        (int) (bufferedImage.getHeight(observer) * scale), observer);
+  public BufferedImage getBufferedImage() {
+    return bufferedImage;
   }
 
   public String toString() {
