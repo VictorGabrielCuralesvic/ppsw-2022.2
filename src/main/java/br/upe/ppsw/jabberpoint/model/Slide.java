@@ -25,8 +25,8 @@ public class Slide {
     items.addElement(anItem);
   }
 
-  public String getTitle() {
-    return title.getText();
+  public TextItem getTitle() {
+    return title;
   }
 
   public void setTitle(String newTitle) {
@@ -50,23 +50,23 @@ public class Slide {
   }
 // refatorar 
   public void draw(Graphics g, Rectangle area, ImageObserver view) {
+  
     float scale = getScale(area);
 
     int y = area.y;
 
     SlideItem slideItem = this.title;
-    Style style = Style.getStyle(slideItem.getLevel());
-    slideItem.draw(area.x, y, scale, g, style, view);
 
-    y += slideItem.getBoundingBox(g, view, scale, style).height;
+    slideItem.draw(area.x, y, scale, g, view);
+
+    y += slideItem.getBoundingBox(g, view, scale).height;
 
     for (int number = 0; number < getSize(); number++) {
       slideItem = (SlideItem) getSlideItems().elementAt(number);
 
-      style = Style.getStyle(slideItem.getLevel());
-      slideItem.draw(area.x, y, scale, g, style, view);
+      slideItem.draw(area.x, y, scale, g, view);
 
-      y += slideItem.getBoundingBox(g, view, scale, style).height;
+      y += slideItem.getBoundingBox(g, view, scale).height;
     }
   }
 
