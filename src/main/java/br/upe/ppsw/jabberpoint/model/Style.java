@@ -9,11 +9,11 @@ public class Style {
   private static Style[] styles;
 
   private static final String FONTNAME = "Helvetica";
-  public int indent;
-  public Color color;
+  int indent;
+  Color color;
   Font font;
   int fontSize;
-  public int leading;
+  int leading;
 
   //métodos
   public static void createStyles() {
@@ -49,4 +49,16 @@ public class Style {
   public Font getFont(float scale) {
     return font.deriveFont(fontSize * scale);
   }
+
+  public int getIndent() {
+		return indent;
+	}
+
+	public Color getColor() {
+		return color;
+	}
+
+	public int getLeading() {
+		return leading;
+	}
 }
