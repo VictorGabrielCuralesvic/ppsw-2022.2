@@ -29,6 +29,8 @@ public class SlideViewerComponent extends JComponent {
   private Presentation presentation = null;
   private JFrame frame = null;
 
+  Drawer drawer;
+
   // construtor
   public SlideViewerComponent(Presentation pres, JFrame frame) {
     setBackground(BGCOLOR);
