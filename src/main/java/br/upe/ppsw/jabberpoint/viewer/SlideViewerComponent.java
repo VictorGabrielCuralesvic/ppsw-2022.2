@@ -34,7 +34,7 @@ public class SlideViewerComponent extends JComponent {
   // construtor
   public SlideViewerComponent(Presentation pres, JFrame frame) {
     setBackground(BGCOLOR);
-    presentation = pres;
+    this.presentation = pres;
     labelFont = new Font(FONTNAME, FONTSTYLE, FONTHEIGHT);
     this.frame = frame;
   }
